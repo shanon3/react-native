@@ -10,20 +10,39 @@ class AplikasiBMI extends React.Component {
     bmi: null,
   };
 
-  renderImage = () => {
+  renderImage() {
     if (this.state.statusBeratBadan === 'Kekurangan') {
-      return (<Image style={{height: 100}} source={require('../src/image/tip-sehat-gemukin-badan.gif')} />);
-    } else if(this.state.statusBeratBadan === 'Normal(ideal)'){
-      return (<Image style={{height: 100}} source={require('../src/image/tip-sehat-gemukin-badan.gif')} />);
-    } else if(this.state.statusBeratBadan === 'Kelebihan'){
-      return (<Image style={{height: 100}} source={require('../src/image/tip-sehat-gemukin-badan.gif')} />);
-    } else if(this.state.statusBeratBadan === 'Obesitas'){
-      return (<Image style={{height: 100}} source={require('../src/image/tip-sehat-gemukin-badan.gif')} />);
+      return (
+        <Image
+          style={{height: 100, weight: 50}}
+          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
+        />
+      );
+    } else if (this.state.statusBeratBadan === 'Normal(ideal)') {
+      return (
+        <Image
+          style={{height: 100}}
+          source={require('../src/image/ideal.gif')}
+        />
+      );
+    } else if (this.state.statusBeratBadan === 'Kelebihan') {
+      return (
+        <Image
+          style={{height: 100}}
+          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
+        />
+      );
+    } else if (this.state.statusBeratBadan === 'Obesitas') {
+      return (
+        <Image
+          style={{height: 100}}
+          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
+        />
+      );
     }
-    }
-  };
+  }
 
-  hitungBMI = () => {
+  hitungBMI() {
     let beratBadan = this.state.berat;
     let tinggiBadan = this.state.tinggi;
 
@@ -50,7 +69,7 @@ class AplikasiBMI extends React.Component {
     this.setState({statusBeratBadan: status});
 
     console.log(this.state.bmi);
-  };
+  }
 
   render() {
     return (
@@ -90,7 +109,6 @@ class AplikasiBMI extends React.Component {
         {/* <Text>{this.state.bmi}</Text> */}
         {this.renderImage()}
         <Text style={{marginTop: 20}}>{this.state.statusBeratBadan}</Text>
-
       </View>
     );
   }
@@ -127,6 +145,7 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     marginTop: 40,
+    marginBottom: 50,
   },
 });
 
