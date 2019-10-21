@@ -1,6 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, Button, View, Image} from 'react-native';
-import {inheritLeadingComments} from '@babel/types';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+// import {createStackNavigator} from 'react-navigation-stack';
 
 class AplikasiBMI extends React.Component {
   state = {
@@ -9,34 +16,65 @@ class AplikasiBMI extends React.Component {
     statusBeratBadan: null,
     bmi: null,
   };
+  static navigationOptions = {
+    title: 'Home',
+    headerStyle: {
+      backgroundColor: '#03a9f4',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  };
 
   renderImage() {
     if (this.state.statusBeratBadan === 'Kekurangan') {
       return (
-        <Image
-          style={{height: 100, weight: 50}}
-          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
-        />
+        <View style={styles.container}>
+          <Text style={styles.status}>
+            {' '}
+            Status berat badan Anda adalah{' '}
+            <Text style={styles.info}> kekurangan berat badan </Text>
+          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('kekurangan')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Tips</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            // onPress={() => {
+            //   this.hitungBMI();
+            // }}>
+            >
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Selengkapnya</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
       );
     } else if (this.state.statusBeratBadan === 'Normal(ideal)') {
       return (
         <Image
-          style={{height: 100}}
-          source={require('../src/image/ideal.gif')}
+          style={styles.kekurangan}
+          source={require('../src/image/ideal.jpg')}
         />
       );
     } else if (this.state.statusBeratBadan === 'Kelebihan') {
       return (
         <Image
-          style={{height: 100}}
-          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
+          style={styles.kekurangan}
+          source={require('../src/image/kelebihan-berat-badan.png')}
         />
       );
     } else if (this.state.statusBeratBadan === 'Obesitas') {
       return (
         <Image
-          style={{height: 100}}
-          source={require('../src/image/tip-sehat-gemukin-badan.gif')}
+          style={styles.obesitas}
+          source={require('../src/image/obesitas.jpg')}
         />
       );
     }
@@ -75,7 +113,9 @@ class AplikasiBMI extends React.Component {
     return (
       <View style={styles.container}>
         {/* <View style={styles.inputBerat}> */}
-        <Text>Berat Badan</Text>
+        <Text style={styles.home}>
+          Input kan berat badan dan tinggi badan Anda.
+        </Text>
         <TextInput
           style={styles.berat}
           placeholder="Masukan Berat Badan Anda"
@@ -84,10 +124,10 @@ class AplikasiBMI extends React.Component {
           }
           value={this.state.berat}
         />
-        <Text style={{marginBottom: 20}}>Kg</Text>
+        {/* <Text style={{marginBottom: 20}}>Kg</Text> */}
         {/* </View> */}
 
-        <Text>Tinggi</Text>
+        {/* <Text>Tinggi</Text> */}
         <TextInput
           style={styles.tinggi}
           placeholder="Masukan Tinggi Badan Anda"
@@ -96,19 +136,22 @@ class AplikasiBMI extends React.Component {
           }
           value={this.state.tinggi}
         />
-        <Text style={{marginBottom: 20}}>cm</Text>
+        {/* <Text style={{marginBottom: 20}}>cm</Text> */}
 
-        <Button
-          style={styles.button}
-          title="Hitung BMI"
-          onPress={() => {
-            this.hitungBMI();
-          }}
-        />
+        <View>
+          <TouchableOpacity
+            onPress={() => {
+              this.hitungBMI();
+            }}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Hitung BMI</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
 
         {/* <Text>{this.state.bmi}</Text> */}
         {this.renderImage()}
-        <Text style={{marginTop: 20}}>{this.state.statusBeratBadan}</Text>
+        {/* <Text style={{marginTop: 20}}>{this.state.statusBeratBadan}</Text> */}
       </View>
     );
   }
@@ -117,35 +160,77 @@ class AplikasiBMI extends React.Component {
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
-    // marginLeft: 50,
-    // justifyContent: 'center'
+    // marginTop: 50,
+    backgroundColor: 'yellow',
+    height: 900,
+    // padding: 20,
   },
-  //   inputBerat:{
-  //     // flex: 1,
-  //     // position: 'relative',
-  //     // flexDirection: 'row',
-  //   },
+  info: {
+    fontWeight: 'bold',
+  },
+  status: {
+    textAlign: 'center',
+    fontSize: 18,
+    // marginTop: 20,
+    marginTop: 80,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+  },
+  home: {
+    textAlign: 'center',
+    fontSize: 24,
+    marginTop: 60,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 40,
+  },
   berat: {
     width: 200,
-    borderWidth: 1,
+    borderWidth: 2,
     marginLeft: 20,
     marginTop: 20,
     marginBottom: 20,
+    borderRadius: 8,
   },
   tinggi: {
     width: 200,
-    borderWidth: 1,
+    borderWidth: 2,
     marginLeft: 20,
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 40,
+    borderRadius: 8,
   },
   button: {
-    width: 100,
-    marginTop: 40,
-    marginBottom: 50,
+    width: 150,
+    height: 'auto',
+    alignContent: 'center',
+    elevation: 5,
+    backgroundColor: 'black',
+    padding: 20,
+    marginRight: 10,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '600',
+    fontSize: 15,
+  },
+  kekurangan: {
+    marginTop: 50,
+    height: 100,
+  },
+  ideal: {
+    marginTop: 50,
+    // height: 200,
+    // width: 80,
+  },
+  obesitas: {
+    marginTop: 50,
+    height: 100,
+    width: 80,
   },
 });
 
