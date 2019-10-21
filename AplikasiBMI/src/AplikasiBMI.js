@@ -10,7 +10,7 @@ class AplikasiBMI extends React.Component {
     bmi: null,
   };
 
-  renderImage() {
+  functionImage() {
     if (this.state.statusBeratBadan === 'Kekurangan') {
       return (
         <Image
@@ -67,7 +67,7 @@ class AplikasiBMI extends React.Component {
     }
 
     this.setState({statusBeratBadan: status});
-
+Profile
     console.log(this.state.bmi);
   }
 
@@ -107,7 +107,7 @@ class AplikasiBMI extends React.Component {
         />
 
         {/* <Text>{this.state.bmi}</Text> */}
-        {this.renderImage()}
+        {this.functionImage()}
         <Text style={{marginTop: 20}}>{this.state.statusBeratBadan}</Text>
       </View>
     );
