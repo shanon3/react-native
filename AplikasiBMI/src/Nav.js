@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Container from '../ScreenContainer';
+import Container from './ScreenContainer';
 
 class Nav extends Component {
   render() {
@@ -8,4 +8,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-

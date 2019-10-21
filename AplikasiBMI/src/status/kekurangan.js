@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 class kekurangan extends React.Component {
   static navigationOptions = {
-    title: 'kekurangan',
+    title: 'Kekurangan',
     headerStyle: {
       backgroundColor: '#73c6b6',
     },
@@ -11,9 +11,6 @@ class kekurangan extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View style={styles.judul}> */}
-        <Text style={styles.judul}>Kekurangan Berat Badan</Text>
-        {/* </View> */}
         <Text style={styles.utama}>
           Penyebab Badan Kurus yang Perlu Anda Ketahui
         </Text>
@@ -40,18 +37,6 @@ class kekurangan extends React.Component {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-  },
-  judul: {
-    width: 300,
-    height: 40,
-    backgroundColor: 'yellow',
-    color: 'black',
-    alignContent: 'center',
-    textAlign: 'center',
-    elevation: 5,
-    borderRadius: 5,
-    fontSize: 18,
-    marginBottom: 30,
   },
   utama: {
     margin: 20,

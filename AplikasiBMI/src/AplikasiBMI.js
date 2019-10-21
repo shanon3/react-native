@@ -4,7 +4,6 @@ import {
   Text,
   TextInput,
   View,
-  Image,
   TouchableOpacity,
 } from 'react-native';
 // import {createStackNavigator} from 'react-navigation-stack';
@@ -19,15 +18,15 @@ class AplikasiBMI extends React.Component {
   static navigationOptions = {
     title: 'Home',
     headerStyle: {
-      backgroundColor: '#03a9f4',
+      backgroundColor: 'black',
     },
-    headerTintColor: '#fff',
+    headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: 'bold',
     },
   };
 
-  renderImage() {
+  functionImage() {
     if (this.state.statusBeratBadan === 'Kekurangan') {
       return (
         <View style={styles.container}>
@@ -38,17 +37,16 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('kekurangan')}>
+              onPress={() => this.props.navigation.navigate('Tips')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-            // onPress={() => {
-            //   this.hitungBMI();
-            // }}>
-            >
+              onPress={() =>
+                this.props.navigation.navigate('StatusKekurangan')
+              }>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Selengkapnya</Text>
               </View>
@@ -58,24 +56,78 @@ class AplikasiBMI extends React.Component {
       );
     } else if (this.state.statusBeratBadan === 'Normal(ideal)') {
       return (
-        <Image
-          style={styles.kekurangan}
-          source={require('../src/image/ideal.jpg')}
-        />
+        <View style={styles.container}>
+          <Text style={styles.status}>
+            {' '}
+            Status berat badan Anda adalah{' '}
+            <Text style={styles.info}> Ideal </Text>
+          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Tips')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Tips</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('StatusIdeal')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Selengkapnya</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
       );
     } else if (this.state.statusBeratBadan === 'Kelebihan') {
       return (
-        <Image
-          style={styles.kekurangan}
-          source={require('../src/image/kelebihan-berat-badan.png')}
-        />
+        <View style={styles.container}>
+          <Text style={styles.status}>
+            {' '}
+            Status berat badan Anda adalah{' '}
+            <Text style={styles.info}> Kelebihan berat badan </Text>
+          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Tips')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Tips</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('StatusKelebihan')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Selengkapnya</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
       );
     } else if (this.state.statusBeratBadan === 'Obesitas') {
       return (
-        <Image
-          style={styles.obesitas}
-          source={require('../src/image/obesitas.jpg')}
-        />
+        <View style={styles.container}>
+          <Text style={styles.status}>
+            {' '}
+            Status berat badan Anda adalah{' '}
+            <Text style={styles.info}> Obesitas </Text>
+          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Tips')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Tips</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('StatusObesitas')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Selengkapnya</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
       );
     }
   }
@@ -105,7 +157,6 @@ class AplikasiBMI extends React.Component {
     }
 
     this.setState({statusBeratBadan: status});
-
     console.log(this.state.bmi);
   }
 
@@ -124,10 +175,7 @@ class AplikasiBMI extends React.Component {
           }
           value={this.state.berat}
         />
-        {/* <Text style={{marginBottom: 20}}>Kg</Text> */}
-        {/* </View> */}
 
-        {/* <Text>Tinggi</Text> */}
         <TextInput
           style={styles.tinggi}
           placeholder="Masukan Tinggi Badan Anda"
@@ -136,7 +184,6 @@ class AplikasiBMI extends React.Component {
           }
           value={this.state.tinggi}
         />
-        {/* <Text style={{marginBottom: 20}}>cm</Text> */}
 
         <View>
           <TouchableOpacity
@@ -149,9 +196,7 @@ class AplikasiBMI extends React.Component {
           </TouchableOpacity>
         </View>
 
-        {/* <Text>{this.state.bmi}</Text> */}
-        {this.renderImage()}
-        {/* <Text style={{marginTop: 20}}>{this.state.statusBeratBadan}</Text> */}
+        {this.functionImage()}
       </View>
     );
   }
