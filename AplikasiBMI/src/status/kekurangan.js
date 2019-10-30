@@ -24,7 +24,9 @@ class kekurangan extends React.Component {
         <Text style={styles.subKelima}> Masalah Psikologis </Text>
 
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Tips')
+          }>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Tips tubuh sehat</Text>
             </View>

@@ -6,6 +6,7 @@ import ideal from './status/ideal';
 import kelebihan from './status/kelebihan';
 import obesitas from './status/obesitas';
 import tips from './tips';
+import url from './url';
 
 const RootStack = createStackNavigator(
   {
@@ -16,6 +17,7 @@ const RootStack = createStackNavigator(
     StatusKelebihan: {screen: kelebihan},
     StatusObesitas: {screen: obesitas},
     Tips: {screen: tips},
+    Url: {screen: url},
   },
   {
     //Default Route

@@ -5,7 +5,7 @@ class url extends React.Component {
   static navigationOptions = {
     title: 'Referensi',
     headerStyle: {
-      backgroundColor: '#73c6b6',
+      backgroundColor: '#73c6b6',,
     },
   };
   render() {
@@ -26,6 +26,9 @@ class url extends React.Component {
           <Text>
             {' '}
             https://beautynesia.id/3148/article/health-food/manfaat-memiliki-berat-badan-ideal-bagi-wanita{' '}
+          </Text>
+          <Text>
+            Sumber Icons : https://icon-icons.com/id/pack/The-Cave-Man/2012{' '}
           </Text>
         </View>
       </View>

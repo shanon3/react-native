@@ -73,7 +73,7 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Tips')}>
+              onPress={() => this.props.navigation.push('Tips')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>

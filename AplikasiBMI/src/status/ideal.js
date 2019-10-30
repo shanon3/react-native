@@ -24,7 +24,9 @@ class ideal extends React.Component {
         <Text style={styles.subKelima}> Terhindar dari Penyakit Gusi </Text>
 
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Tips')}
+          >
             <View style={styles.button}>
               <Text style={styles.buttonText}>Tips tubuh sehat</Text>
             </View>
