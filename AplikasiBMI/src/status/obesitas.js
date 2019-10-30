@@ -12,13 +12,10 @@ class obesitas extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.utama}>
-         Faktor penyebab kenaikan berat badan dan obesitas
+          Faktor penyebab kenaikan berat badan dan obesitas
         </Text>
         <Text style={styles.subUtama}> Genetik</Text>
-        <Text style={styles.subKedua}>
-          {' '}
-           Junk food{' '}
-        </Text>
+        <Text style={styles.subKedua}> Junk food </Text>
         <Text style={styles.subKetiga}> Obat-obatan tertentu </Text>
         <Text style={styles.subKeempat}> Stres </Text>
         <Text style={styles.subKelima}> Malas gerak </Text>

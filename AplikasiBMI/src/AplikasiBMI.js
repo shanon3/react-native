@@ -4,6 +4,7 @@ import {
   Text,
   TextInput,
   View,
+  Image,
   TouchableOpacity,
 } from 'react-native';
 // import {createStackNavigator} from 'react-navigation-stack';
@@ -37,16 +38,15 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Tips')}>
+              onPress={() => this.props.navigation.navigate('Tips')
+              }>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('StatusKekurangan')
-              }>
+            onPress={() => this.props.navigation.navigate('StatusKekurangan')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Selengkapnya</Text>
               </View>
@@ -57,6 +57,11 @@ class AplikasiBMI extends React.Component {
     } else if (this.state.statusBeratBadan === 'Normal(ideal)') {
       return (
         <View style={styles.container}>
+        <View>
+          <Image 
+          style = {{marginTop: 15,}}
+          source={require('./assets/ideal.png')} />
+        </View>
           <Text style={styles.status}>
             {' '}
             Status berat badan Anda adalah{' '}
@@ -64,14 +69,15 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Tips')}>
+              onPress={() => this.props.navigation.navigate('Tips')
+              }>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('StatusIdeal')}>
+            onPress={() => this.props.navigation.navigate('StatusIdeal')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Selengkapnya</Text>
               </View>
@@ -89,14 +95,15 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Tips')}>
+              onPress={() => this.props.navigation.navigate('Tips')
+              }>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('StatusKelebihan')}>
+            onPress={() => this.props.navigation.navigate('StatusKelebihan')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Selengkapnya</Text>
               </View>
@@ -114,14 +121,15 @@ class AplikasiBMI extends React.Component {
           </Text>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Tips')}>
+              onPress={() => this.props.navigation.navigate('Tips')
+              }>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tips</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('StatusObesitas')}>
+            onPress={() => this.props.navigation.navigate('StatusObesitas')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Selengkapnya</Text>
               </View>
@@ -219,7 +227,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     // marginTop: 20,
-    marginTop: 80,
+    marginTop: 20,
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 20,
