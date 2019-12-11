@@ -1,16 +1,13 @@
 import React from 'react';
-import {
-    View,
-    Text
-} from 'react-native';
+import {View, Text} from 'react-native';
 import AppStatles from './AppStatles';
 
-class App extends React.Component{
-    render(){
-        console.log("Hello World");
-        return(
-            <View>
-            {/* 
+class App extends React.Component {
+  render() {
+    console.log('Hello World');
+    return  (
+      <View>
+        {/*
                 <Ruang nama="Persegi" luas="Sisi x sisi" keliling="4 x sisi" />
                 <Text></Text>
 
@@ -27,11 +24,16 @@ class App extends React.Component{
                 <Text></Text>
              */}
 
-                <AppStatles nama="Randy" alamat="JKT" telp="021" email="randy@yahoo.com"/>
-                
-            </View>
-        );
-    }
+        <AppStatles
+          nama="Randy"
+          alamat="JKT"
+          telp="021"
+          email="randy@yahoo.com"
+        />
+      </View>
+    );
+  }
 }
 
 export default App;
+

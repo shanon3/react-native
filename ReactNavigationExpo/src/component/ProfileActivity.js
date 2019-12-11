@@ -15,12 +15,16 @@ class ProfileActivity extends Component {
 
         <Button
           title="Go To Home"
-          onPress={() => this.props.navigation.push('Home')}
+          onPress={() => this.props.navigation.navigate('Home')}
         />
         <Text style={styles.headerStyle}>Create New Profile Screen</Text>
         <Button
           title="Go to New Profile"
-          onPress={() => this.props.navigation.push('Profile')}
+          onPress={() => this.props.navigation.navigate('Profile')}
+        />
+        <Button
+          title="Go to List Todo"
+          onPress={() => this.props.navigation.navigate('List')}
         />
         <Button
           title="Go Back"
@@ -36,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5fcff',,
+    backgroundColor: '#f5fcff',
   },
   headerText: {
     fontSize: 20,

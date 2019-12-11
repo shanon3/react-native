@@ -7,7 +7,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
-  ImageBackground,,
+  ImageBackground,
 } from 'react-native';
 // import {styles} from './FormLoginStyle'
 
@@ -78,13 +78,13 @@ const styles = StyleSheet.create({
     // marginTop: 50,
     // alignItems: 'center',
     width: 360,
-    height: 800,,
+    height: 800,
   },
   logo: {
     // alignItems: 'center'
     marginTop: 30,
     marginLeft: 30,
-    height: 200,,
+    height: 200,
   },
   tulisanLogin: {
     alignItems: 'center',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     fontSize: 24,
     color: 'white',
-    fontWeight: 'bold',,
+    fontWeight: 'bold',
   },
   tulisanUP: {
     alignItems: 'center',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     color: 'white',
     justifyContent: 'center',
     fontWeight: 'bold',
-    fontSize: 18,,
+    fontSize: 18,
   },
   username: {
     borderWidth: 1,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 50,
     backgroundColor: 'white',
-    borderRadius: 20,,
+    borderRadius: 20,
   },
   password: {
     borderWidth: 1,
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 50,
     backgroundColor: 'white',
-    borderRadius: 20,,
+    borderRadius: 20,
   },
   button: {
     backgroundColor: 'blue',
@@ -135,8 +135,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     width: 80,
     height: 90,
-    marginLeft: 20,,
+    marginLeft: 20,
     // alignItems: 'center'
-  },,
-});;
-
+  },
+});

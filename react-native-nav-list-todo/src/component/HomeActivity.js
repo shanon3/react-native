@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import  {StyleSheet, Text, View, Button} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
 class HomeActivity extends Component {
   static navigationOptions = {
@@ -13,7 +13,7 @@ class HomeActivity extends Component {
     },
   };
   render() {
-    return  (
+    return (
       <View style={styles.container}>
         <Text style={styles.headerText}>Home Activity</Text>
         <Button
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,,
-  },,
+    margin: 10,
+  },
 });
-;
+
+export default HomeActivity;

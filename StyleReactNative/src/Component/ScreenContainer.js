@@ -4,16 +4,17 @@ import HomeActivity from './HomeActivity';
 import ProfileActivity from './ProfileActivity';
 
 const RootStack = createStackNavigator(
-    {
-        //The Routes
-        Home: { screen: HomeActivity},
-        Profile: { screen: ProfileActivity},
-    },
-    {
-        //Default Route
-        initialRouteName: 'Home',
-    }
+  {
+    //The Routes
+    Home: {screen: HomeActivity},
+    Profile: {screen: ProfileActivity},
+  },
+  {
+    //Default Route
+    initialRouteName: 'Home',
+  },
 );
 //create app container
 const Container = createAppContainer(RootStack);
 export default Container;
+

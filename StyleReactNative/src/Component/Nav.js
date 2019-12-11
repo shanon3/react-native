@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import Container from '../Component/ScreenContainer'
+import Container from './ScreenContainer';
 
-class Nav extends Component{
-    render(){
-        return(
-            <Container/>
-        );
-    }
+class Nav extends Component {
+  render() {
+    return <Container />;
+  }
 }
 
 export default Nav;
